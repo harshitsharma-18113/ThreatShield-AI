@@ -1,86 +1,62 @@
-# threatshield-ai
+cat << 'EOF' > README.md
+# 🛡️ ThreatShield AI: Enterprise Autonomous Network Defense Fleet
 
-Simple ReAct agent
-Agent generated with `agents-cli` version `0.5.0`
+[![Google ADK 2.0](https://img.shields.io/badge/Framework-Google%20ADK%202.0-blue)](https://github.com/google/agents-core)
+[![Built with Antigravity IDE](https://img.shields.io/badge/IDE-Antigravity%20IDE-purple)](#)
+[![Model-Gemini 1.5 Pro](https://img.shields.io/badge/Model-Gemini%201.5%20Pro-orange)](https://aistudio.google.com/)
 
-## Project Structure
-
-```
-threatshield-ai/
-├── app/         # Core agent code
-│   ├── agent.py               # Main agent logic
-│   └── app_utils/             # App utilities and helpers
-├── tests/                     # Unit, integration, and load tests
-├── GEMINI.md                  # AI-assisted development guide
-└── pyproject.toml             # Project dependencies
-```
-
-> 💡 **Tip:** Use [Gemini CLI](https://github.com/google-gemini/gemini-cli) for AI-assisted development - project context is pre-configured in `GEMINI.md`.
-
-## Requirements
-
-Before you begin, ensure you have:
-- **uv**: Python package manager (used for all dependency management in this project) - [Install](https://docs.astral.sh/uv/getting-started/installation/) ([add packages](https://docs.astral.sh/uv/concepts/dependencies/) with `uv add <package>`)
-- **agents-cli**: Agents CLI - Install with `uv tool install google-agents-cli`
-- **Google Cloud SDK**: For GCP services - [Install](https://cloud.google.com/sdk/docs/install)
-
-
-## Quick Start
-
-Install `agents-cli` and its skills if not already installed:
-
-```bash
-uvx google-agents-cli setup
-```
-
-Install required packages:
-
-```bash
-agents-cli install
-```
-
-Test the agent with a local web server:
-
-```bash
-agents-cli playground
-```
-
-You can also use features from the [ADK](https://adk.dev/) CLI with `uv run adk`.
-
-## Commands
-
-| Command              | Description                                                                                 |
-| -------------------- | ------------------------------------------------------------------------------------------- |
-| `agents-cli install` | Install dependencies using uv                                                         |
-| `agents-cli playground` | Launch local development environment                                                  |
-| `agents-cli lint`    | Run code quality checks                                                               |
-| `agents-cli eval`    | Evaluate agent behavior (generate, grade, analyze, and more — see `agents-cli eval --help`) |
-| `uv run pytest tests/unit tests/integration` | Run unit and integration tests                                                        |
-
-## 🛠️ Project Management
-
-| Command | What It Does |
-|---------|--------------|
-| `agents-cli scaffold enhance` | Add CI/CD pipelines and Terraform infrastructure |
-| `agents-cli infra cicd` | One-command setup of entire CI/CD pipeline + infrastructure |
-| `agents-cli scaffold upgrade` | Auto-upgrade to latest version while preserving customizations |
+An enterprise-grade, autonomous corporate network security agent engineered natively within the **Google Antigravity IDE** environment utilizing the **Google ADK (Agent Development Kit)** framework and powered by the advanced reasoning capabilities of **Gemini 1.5 Pro**.
 
 ---
 
-## Development
+## 📸 Project Showcase (Visual Dashboard)
 
-Edit your agent logic in `app/agent.py` and test with `agents-cli playground` - it auto-reloads on save.
+Below is the live operational interface of the ThreatShield AI Security Operations Center running natively on macOS:
 
-## Deployment
+### 🖥️ Real-Time Security Operations Center (SOC)
+*Drag and drop your main dashboard screenshot here to replace the placeholder link:*
+![ThreatShield AI Live Dashboard](https://github.com/harshitsharma-18113/ThreatShield-AI/assets/placeholder_dashboard.png)
+
+### 🚨 Day 4 Safety Guardrails & Interception Audits
+*Drag and drop your screenshot showing the red alert box right here:*
+![Day 4 Interception Audit Log](https://github.com/harshitsharma-18113/ThreatShield-AI/assets/placeholder_guardrails.png)
+
+---
+
+## 🏗️ System Architecture & Data Flow
+
+ThreatShield AI handles threats asynchronously using a multi-layered autonomous orchestration loop:
+
+* **Data Ingestion:** Ingests live production JSON schemas containing simulated multi-vector network traffic patterns.
+* **Reasoning Engine:** Passes raw streams to Gemini 1.5 Pro to trace state timelines and isolate hidden security anomalies.
+* **Orchestration Loop (MCP Server):** Evaluates threats and fires structured Pydantic tool parameters to instantly execute `trigger_firewall_block(ip)` or human triage protocols.
+* **Day 4 Guardrail Vector:** Intercepts and isolates inbound prompt injection vectors at the edge before they can contaminate core pipeline logic.
+
+---
+
+## 🚀 Architectural Core Primitives
+
+### 1. Model Context Protocol (MCP) Server
+Binds a strict, type-safe environment utilizing structured schemas for tool execution:
+* `read_network_logs()`: Ingests rich JSON security streams.
+* `trigger_firewall_block(ip)`: Performs autonomous, real-time perimeter containment against threat actors.
+* `escalate_to_human(alert_level)`: Routes severe multi-vector attacks to Tier 3 human analysts.
+
+### 2. Multi-Turn Session Memory (Day 3 Tracking)
+Leverages the 2 Million token context window of Gemini 1.5 Pro to cross-correlate historical log traces over extended session intervals, effectively catching low-and-slow lateral database movement anomalies that normal stateless systems miss.
+
+### 3. Rigorous Safety & Evaluation (Day 4 Interception)
+Features a deterministic input/output validation layer built natively into the ADK runtime environment. Any malicious prompt injection (e.g., attempts to force the model to override system telemetry) is intercepted instantly at the edge before it interacts with inner system runtimes.
+
+---
+
+## 🛠️ Local Deployment & Development
+
+Ensure you are working inside your isolated Python environment setup by `uv`:
 
 ```bash
-gcloud config set project <your-project-id>
-agents-cli deploy
-```
+# 1. Clone the environment framework
+cd threatshield-ai
 
-To add CI/CD and Terraform, run `agents-cli scaffold enhance`.
-To set up your production infrastructure, run `agents-cli infra cicd`.
-
-## Observability
-
-Built-in telemetry exports to Cloud Trace, BigQuery, and Cloud Logging.
+# 2. Boot up the local Streamlit client dashboard
+uv run streamlit run app.py
