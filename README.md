@@ -36,17 +36,13 @@ The objective is to demonstrate how modern AI agents can assist Security Operati
 
 ## Security Operations Dashboard
 
-> Replace this image with your dashboard screenshot.
-
-![Dashboard](images/dashboard.png)
+<img width="1460" height="829" alt="Image" src="https://github.com/user-attachments/assets/8bc5e457-e43f-476b-8517-3ad4ce608569" />
 
 ---
 
 ## Prompt Injection Guardrails
 
-> Replace this image with your guardrails screenshot.
-
-![Guardrails](images/guardrails.png)
+<img width="1459" height="736" alt="Image" src="https://github.com/user-attachments/assets/471ae193-e795-4fbc-82f0-fd9c3f8e1473" />
 
 ---
 
