@@ -140,12 +140,6 @@ cd threatshield-ai
 
 # 2. Boot up the local Streamlit client dashboard
 uv run streamlit run app.py
-
-⚙️ Technical Workflow Commands
-Run these inside the repository to manage development loops:
-•	Linting Check: agents-cli lint (Validates model tool compliance)
-•	Local Testing: agents-cli playground (Runs local developer staging)
-•	Evaluation Loop: agents-cli eval (Grades agent responses against test safety matrix)
 🔗 Kaggle Capstone Submission Artifacts
 •	Official Demo Walkthrough Video: [PASTE_YOUR_YOUTUBE_OR_DRIVE_LINK_HERE]
 •	Track Selection: Agents for Business / Security
