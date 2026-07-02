@@ -24,7 +24,6 @@ Below is the live operational interface of the ThreatShield AI Security Operatio
 
 ## 🏗️ System Architecture & Core Topology Map
 
-```text
 [ NETWORK INFRASTRUCTURE LOG STREAM ]
                   │
                   ▼ (Ingests Rich JSON Schema)
