@@ -1,4 +1,3 @@
-cat << 'EOF' > README.md
 # 🛡️ ThreatShield AI: Enterprise Autonomous Network Defense Fleet
 
 [![Google ADK 2.0](https://img.shields.io/badge/Framework-Google%20ADK%202.0-blue)](https://github.com/google/agents-core)
@@ -23,40 +22,71 @@ Below is the live operational interface of the ThreatShield AI Security Operatio
 
 ---
 
-## 🏗️ System Architecture & Data Flow
+## 🏗️ System Architecture & Core Topology Map
 
-ThreatShield AI handles threats asynchronously using a multi-layered autonomous orchestration loop:
-
-* **Data Ingestion:** Ingests live production JSON schemas containing simulated multi-vector network traffic patterns.
-* **Reasoning Engine:** Passes raw streams to Gemini 1.5 Pro to trace state timelines and isolate hidden security anomalies.
-* **Orchestration Loop (MCP Server):** Evaluates threats and fires structured Pydantic tool parameters to instantly execute `trigger_firewall_block(ip)` or human triage protocols.
-* **Day 4 Guardrail Vector:** Intercepts and isolates inbound prompt injection vectors at the edge before they can contaminate core pipeline logic.
-
----
-
-## 🚀 Architectural Core Primitives
-
-### 1. Model Context Protocol (MCP) Server
+```text
+[ NETWORK INFRASTRUCTURE LOG STREAM ]
+                  │
+                  ▼ (Ingests Rich JSON Schema)
+┌────────────────────────────────────────────────────────┐
+│             THREATSHIELD FLEET ORCHESTRATOR            │
+│       (Natively managing multi-turn session loops)     │
+└─────────────────────────┬──────────────────────────────┘
+                          │
+                          ▼ (Asynchronous Token Tracing)
+┌────────────────────────────────────────────────────────┐
+│            GEMINI 1.5 PRO REASONING ENGINE             │
+│    (Scans 2M Long-Context History for Anomalies)       │
+└─────────────────────────┬──────────────────────────────┘
+                          │
+        ┌─────────────────┴─────────────────┐
+        ▼ (Anomalous Flow)                  ▼ (Malicious Payload Injection)
+┌──────────────────────────────┐    ┌──────────────────────────────────┐
+│ MODEL CONTEXT PROTOCOL SERVER│    │   DAY 4 SAFETY GUARDRAIL LAYER   │
+│   (Type-Safe Pydantic Tools) │    │  (Deterministic Regex/AI Filter) │
+└───────┬──────────────┬───────┘    └────────────────┬─────────────────┘
+        │              │                             │
+        ▼              ▼                             ▼ (Intercepts Attack Vector)
+[ Tool Executed ]  [ Escalation Trigger ]   ┌──────────────────────────────────┐
+trigger_firewall   escalate_to_human        │  RED INTERCEPTION AUDIT ALERT    │
+   (IP Blocked)      (Tier 3 Triage)        │    (Logs and neutralizes input)  │
+                                            └──────────────────────────────────┘
+⚙️ Operational Data Flow Loop:
+•	Data Ingestion: Ingests live production JSON schemas containing simulated multi-vector network traffic patterns.
+•	Reasoning Engine: Passes raw streams to Gemini 1.5 Pro to trace state timelines and isolate hidden security anomalies.
+•	Orchestration Loop (MCP Server): Evaluates threats and fires structured Pydantic tool parameters to instantly execute trigger_firewall_block(ip) or human triage protocols.
+•	Day 4 Guardrail Vector: Intercepts and isolates inbound prompt injection vectors at the edge before they can contaminate core pipeline logic.
+🚀 Architectural Core Primitives
+1. Model Context Protocol (MCP) Server
 Binds a strict, type-safe environment utilizing structured schemas for tool execution:
-* `read_network_logs()`: Ingests rich JSON security streams.
-* `trigger_firewall_block(ip)`: Performs autonomous, real-time perimeter containment against threat actors.
-* `escalate_to_human(alert_level)`: Routes severe multi-vector attacks to Tier 3 human analysts.
-
-### 2. Multi-Turn Session Memory (Day 3 Tracking)
+•	read_network_logs(): Ingests rich JSON security streams.
+•	trigger_firewall_block(ip): Performs autonomous, real-time perimeter containment against threat actors.
+•	escalate_to_human(alert_level): Routes severe multi-vector attacks to Tier 3 human analysts.
+2. Multi-Turn Session Memory (Day 3 Tracking)
 Leverages the 2 Million token context window of Gemini 1.5 Pro to cross-correlate historical log traces over extended session intervals, effectively catching low-and-slow lateral database movement anomalies that normal stateless systems miss.
-
-### 3. Rigorous Safety & Evaluation (Day 4 Interception)
+3. Rigorous Safety & Evaluation (Day 4 Interception)
 Features a deterministic input/output validation layer built natively into the ADK runtime environment. Any malicious prompt injection (e.g., attempts to force the model to override system telemetry) is intercepted instantly at the edge before it interacts with inner system runtimes.
-
----
-
-## 🛠️ Local Deployment & Development
-
-Ensure you are working inside your isolated Python environment setup by `uv`:
-
-```bash
+🛠️ Local Deployment & Development
+Ensure you are working inside your isolated Python environment setup by uv:
 # 1. Clone the environment framework
 cd threatshield-ai
 
 # 2. Boot up the local Streamlit client dashboard
 uv run streamlit run app.py
+
+# 1. Clone the environment framework
+cd threatshield-ai
+
+# 2. Boot up the local Streamlit client dashboard
+uv run streamlit run app.py
+
+⚙️ Technical Workflow Commands
+Run these inside the repository to manage development loops:
+•	Linting Check: agents-cli lint (Validates model tool compliance)
+•	Local Testing: agents-cli playground (Runs local developer staging)
+•	Evaluation Loop: agents-cli eval (Grades agent responses against test safety matrix)
+🔗 Kaggle Capstone Submission Artifacts
+•	Official Demo Walkthrough Video: [PASTE_YOUR_YOUTUBE_OR_DRIVE_LINK_HERE]
+•	Track Selection: Agents for Business / Security
+•	Built By: Harshit Sharma
+Natively built using Google Antigravity Vibe Coding primitives.
